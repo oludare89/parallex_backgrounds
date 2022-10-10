@@ -20,7 +20,8 @@ let x = 0;
 function animate(){
     ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
     ctx.drawImage(backgroundLayer4, x ,0);
-    x -= gameSpeed;
+    if (x < -2400) x = 2400;
+    else x -= gameSpeed;
     requestAnimationFrame(animate);
 }
 animate();
